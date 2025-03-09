@@ -1,9 +1,6 @@
 "use client";
-
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { Card, CardContent, CardFooter } from "./ui/card";
-import { Button } from "./ui/button";
 
 interface DestinationCardProps {
   handle: string;
@@ -20,32 +17,37 @@ export default function DestinationCard({
 }: DestinationCardProps) {
   const router = useRouter();
 
+  const getTagline = (name: string) => {
+    const taglines: {[key: string]: string} = {
+      "Turkey": "CREATE MEMORIES IN",
+      "Singapore": "THE LION CITY",
+      "Dubai": "THE CITY OF LIFE",
+      "Egypt": "OLD WORLD CHARM",
+      "Kenya": "THE LAND OF MAASAI"
+    };
+    
+    return taglines[name] || "EXPLORE";
+  };
+  
   return (
-    <Card className="overflow-hidden group cursor-pointer">
-      <CardContent className="p-0 relative">
-        <div className="relative h-[300px] w-full">
-          <Image
-            src={image}
-            alt={name}
-            fill
-            className="object-cover transition-transform duration-300 group-hover:scale-110"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
+    <div 
+      className="min-w-[280px] flex-shrink-0 snap-start cursor-pointer"
+      onClick={() => router.push(`/destination/${handle}`)}
+    >
+      <div className="relative h-[200px] rounded-lg overflow-hidden">
+        <Image
+          src={image}
+          alt={name}
+          fill
+          className="object-cover transition-transform duration-300 hover:scale-105"
+          sizes="280px"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/60" />
+        <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
+          <p className="text-xs uppercase font-medium tracking-wider mb-1">{getTagline(name)}</p>
+          <h3 className="text-3xl font-bold">{name}</h3>
         </div>
-        <div className="absolute bottom-0 p-6 text-white">
-          <h3 className="text-2xl font-bold mb-2">{name}</h3>
-          <p className="text-sm opacity-90">{description}</p>
-        </div>
-      </CardContent>
-      <CardFooter className="p-4">
-        <Button
-          className="w-full"
-          onClick={() => router.push(`/destination/${handle}`)}
-        >
-          Explore
-        </Button>
-      </CardFooter>
-    </Card>
+      </div>
+    </div>
   );
 }
