@@ -34,7 +34,7 @@ const ContactPage = () => {
           <div className="md:flex">
             <div className="md:w-1/2 bg-blue-800 p-10 text-white">
               <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
-              <p className="mb-8">Have a trip in mind? We'd love to hear from you. Fill out the form and our team will get back to you as soon as possible.</p>
+              <p className="mb-8">Have a trip in mind? We&apos;d love to hear from you. Fill out the form and our team will get back to you as soon as possible.</p>
               
               <div className="space-y-4 mt-10">
                 <div className="flex items-center">

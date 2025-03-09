@@ -53,9 +53,9 @@ export default function Banner() {
       <div className="embla overflow-hidden h-full" ref={emblaRef}>
         <div className="embla__container flex h-full">
           {Array.isArray(banners) && banners.length > 0 ? (
-            banners.map((banner) => (
+            banners.map((banner, index) => (
               <div
-                key={banner.id}
+                key={index}
                 className="embla__slide flex-[0_0_100%] relative"
               >
                 <Image

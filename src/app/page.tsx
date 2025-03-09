@@ -58,21 +58,21 @@ export default async function Home() {
           className="flex gap-5 overflow-x-auto pb-4 snap-x hide-scrollbar"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {destinations?.length > 0 ? (
-            destinations.map((destination) => (
+            {destinations?.length > 0 ? (
+            destinations.map((destination, index) => (
               <DestinationCard
-                key={destination.id}
-                handle={destination.handle}
-                name={destination.title}
-                image={destination.img}
-                description={destination.description}
+              key={index}
+              handle={destination.handle}
+              name={destination.title}
+              image={destination.img}
+              description={destination.description}
               />
             ))
-          ) : (
+            ) : (
             <p className="text-center text-gray-500">
               No destinations available at the moment.
             </p>
-          )}
+            )}
         </div>
       </section>
     </main>

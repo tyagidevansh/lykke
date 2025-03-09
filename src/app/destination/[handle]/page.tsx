@@ -184,7 +184,7 @@ export default function DestinationPage() {
           <div className="mt-10">
             <a href="#trips" className="inline-block">
               <div className="animate-bounce bg-white p-2 w-10 h-10 ring-1 ring-white/20 shadow-lg rounded-full flex items-center justify-center">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-6 h-6 text-blue-600" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                   <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                 </svg>
               </div>
@@ -192,8 +192,7 @@ export default function DestinationPage() {
           </div>
         </div>
       </div>
-
-      {/* Destination Info Cards - Glass Morphism Style */}
+      
       <div className="relative -mt-20 z-20">
         <div className="container mx-auto px-6">
           <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl border border-white/50 p-2 md:p-0">
@@ -380,7 +379,7 @@ export default function DestinationPage() {
             </div>
             <h2 className="text-3xl font-bold mb-3 text-gray-800">Journey Awaits</h2>
             <p className="text-gray-600 max-w-md mx-auto mb-8">
-              We're still crafting amazing experiences for {capitalizeDestination(handle)}. Check back soon or explore our other captivating destinations.
+              We&apos;re still crafting amazing experiences for {capitalizeDestination(handle)}. Check back soon or explore our other captivating destinations.
             </p>
             <Link href="/destinations">
               <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-3 rounded-full transition-all duration-300 font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1">

@@ -1,13 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
+import { useState } from "react";
 import { 
   Search, 
-  Calendar, 
   Users, 
   Bed, 
-  ChevronRight, 
   CheckCircle, 
   X
 } from "lucide-react";
@@ -59,7 +55,7 @@ const DestinationSearch = ({
 
   return (
     <div className="max-w-md mx-auto">
-      <h1 className="text-2xl font-semibold text-center mb-6">What's <span className="text-green-500 italic">your pick</span> for your next vacation?</h1>
+      <h1 className="text-2xl font-semibold text-center mb-6">What&apos;s <span className="text-green-500 italic">your pick</span> for your next vacation?</h1>
       <div className="relative mb-4">
         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
           <Search className="h-5 w-5 text-gray-400" />
@@ -117,7 +113,7 @@ const getTagColor = (tag: string) => {
 const DurationSelector = ({ onSelect }: { onSelect: (days: string) => void }) => {
   return (
     <div className="max-w-md mx-auto">
-      <h1 className="text-2xl font-semibold text-center mb-6">What's the duration of your holiday?</h1>
+      <h1 className="text-2xl font-semibold text-center mb-6">What&apos;s the duration of your holiday?</h1>
       <div className="grid grid-cols-2 gap-4">
         {durationOptions.map((option) => (
           <div
